@@ -126,3 +126,7 @@ export function Index() {
 }
 
 export default Index
+
+export const config = {
+  runtime: 'experimental-edge'
+}

@@ -198,8 +198,8 @@ const CrowdfundingChart = (props: ComponentProps<typeof CrowdfundingChartWrapper
   )
 }
 
-const {publicRuntimeConfig} = getConfig()
+const publicRuntimeConfig = getConfig()?.publicRuntimeConfig
 const ConnectedCrowdfundingChart = memo(
-  ApiV2.createWithV2ApiClient(publicRuntimeConfig.env.API_URL!)(CrowdfundingChart)
+  ApiV2.createWithV2ApiClient(publicRuntimeConfig?.env.API_URL ?? '')(CrowdfundingChart)
 )
 export {ConnectedCrowdfundingChart as CrowdfundingChart}

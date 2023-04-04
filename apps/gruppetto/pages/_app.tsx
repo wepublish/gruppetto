@@ -169,10 +169,10 @@ function CustomApp({Component, pageProps, sessionToken}: CustomAppProps) {
   )
 }
 
-const {publicRuntimeConfig} = getConfig()
-const ConnectedApp = ApiV1.createWithV1ApiClient(publicRuntimeConfig.env.API_URL!, [authLink])(
-  CustomApp
-)
+const publicRuntimeConfig = getConfig()?.publicRuntimeConfig
+const ConnectedApp = ApiV1.createWithV1ApiClient(publicRuntimeConfig?.env.API_URL ?? '', [
+  authLink
+])(CustomApp)
 
 ;(ConnectedApp as any).getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext)
