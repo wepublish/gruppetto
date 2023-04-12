@@ -1,5 +1,6 @@
 import {Link, Typography} from '@mui/material'
 import {PageContainer} from '@wepublish/website'
+import {GetStaticProps} from 'next'
 import Image from 'next/image'
 import Marlen from '../src/2212_Marlen Reusser030_396 1.png'
 import Marlen2 from '../src/2212_Marlen Reusser030_396 2.png'
@@ -126,3 +127,10 @@ export function Index() {
 }
 
 export default Index
+
+export const getStaticProps: GetStaticProps = context => {
+  return {
+    props: {},
+    revalidate: false
+  }
+}

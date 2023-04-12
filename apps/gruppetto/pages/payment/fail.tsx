@@ -1,5 +1,6 @@
 import {Alert, CircularProgress, styled, Typography} from '@mui/material'
 import {ApiV1, useUser} from '@wepublish/website'
+import {GetStaticProps} from 'next'
 import {useRouter} from 'next/router'
 import {useEffect, useMemo, useState} from 'react'
 import {Button} from '../../src/components/button'
@@ -146,4 +147,11 @@ export default function PaymentFail() {
       </PaymentButtonWrapper>
     </PaymentFailWrapper>
   )
+}
+
+export const getStaticProps: GetStaticProps = context => {
+  return {
+    props: {},
+    revalidate: false
+  }
 }
