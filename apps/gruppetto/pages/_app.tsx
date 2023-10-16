@@ -33,6 +33,7 @@ import translation from 'zod-i18n-map/locales/de/zod.json'
 import {authLink} from '../src/auth-link'
 import background from '../src/background.svg'
 import {GruppettoBreakBlock} from '../src/break-block'
+import {GruppettoImageBlock} from '../src/image-block'
 import {Button} from '../src/button'
 import {Footer} from '../src/footer'
 import {ReactComponent as Logo} from '../src/logo.svg'
@@ -156,7 +157,7 @@ function CustomApp({Component, pageProps}: CustomAppProps) {
           Footer={Footer}
           MemberPlanItem={YearlyMemberPlanItem}
           elements={{Link: NextWepublishLink, Button}}
-          blocks={{Break: GruppettoBreakBlock}}>
+          blocks={{Break: GruppettoBreakBlock, Image: GruppettoImageBlock}}>
           <ThemeProvider theme={gruppettoTheme}>
             <CssBaseline />
 
@@ -171,7 +172,7 @@ function CustomApp({Component, pageProps}: CustomAppProps) {
             </Head>
 
             <Spacer>
-              <NavBar categorySlugs={['about-us', 'issues', 'account']} slug="main">
+              <NavBar categorySlugs={['account','about-us', 'issues']} slug="main">
                 <LogoLink href="/" aria-label="Startseite">
                   <LogoWrapper />
                 </LogoLink>
