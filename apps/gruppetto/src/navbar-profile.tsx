@@ -11,7 +11,7 @@ const NavBarProfileWrapper = styled('div')`
 `
 
 const SignupWrapper = styled('div')`
-  display: none;
+  display: true;
 
   ${({theme}) => theme.breakpoints.up('md')} {
     display: unset;
